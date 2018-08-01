@@ -51,6 +51,7 @@
         /* Page styles */
         .main {
             display: flex;
+            flex-direction: column;
         }
 
         .content {
@@ -61,9 +62,9 @@
             flex-basis: 33.33%;
         }
 
-        @media all and (max-width: 500px) {
+        @media all and (min-width: 500px) {
             .main {
-                flex-direction: column;
+                flex-direction: row;
             }
         }
     </style>
