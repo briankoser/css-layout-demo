@@ -1,0 +1,286 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid - Menu Layout - CSS Layout</title>
+    <style>
+        /* Standard styles */
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        
+        body {
+            color: white;
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        .header,
+        .footer,
+        .content,
+        .sidebar {
+            padding: 0.5em;
+        }
+
+        .header {
+            background-color: blue;
+            /*height: 100px;*/
+        }
+
+        .content {
+            background-color: orange;
+        }
+
+        .sidebar {
+            background-color: green;
+        }
+
+        .footer {
+            background-color: blue;
+            /*height: 100px;*/
+        }
+
+        
+
+        /* Page styles */
+        body {
+            display: grid;
+            grid-template-areas:
+                "header"
+                "content"
+                "sidebar"
+                "footer";
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .content {
+            grid-area: content;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        @media all and (min-width: 500px) {
+            body {
+                grid-template-columns: 2fr 1fr;
+                grid-template-rows: 100px 1fr 100px;
+                grid-template-areas:
+                    "header header"
+                    "content sidebar"
+                    "footer footer";
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="build-your-pie">
+        <h1>Build Your Pie</h1>
+        <h2>$7.49</h2>
+        <div class="choose-container">
+            <div class="choose">
+                <h1>Choose Your Crust</h1>
+                <ul>
+                    <li>Crispy Thin
+                    <li>Traditional Italian
+                    <li>Classic Pan
+                    <li>Gluten-free +$2
+                </ul>
+            </div>
+
+            <div class="choose">
+                <h1>Choose Your Sauce</h1>
+                <ul>
+                    <li>tuscan marinara
+                    <li>spicy marinara
+                    <li>buffalo ranch
+                    <li>alfredo
+                    <li>olive oil
+                    <li>bbq
+                </ul>
+            </div>
+
+            <div class="choose">
+                <h1>choose your cheese</h1>
+                <ul>
+                    <li>100% whole milk mozzarella
+                    <li>shredded cheddar
+                    <li>ricotta
+                    <li>shredded parmesan
+                    <li>vegan cheese +$2
+                </ul>
+            </div>
+
+            <div class="choose">
+                <h1>choose your toppings</h1>
+            </div>
+            
+            <div class="choose">
+                <h1>what are you waiting for?</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="try-our-pie">
+        <h1>try our pie</h1>
+        <h2>$7.49</h2>
+        
+        <div class="pie-container">
+            <div class="pie">
+                <h1>Five Star</h1>
+                <ul>
+                    <li>tuscan marinara
+                    <li>green olives
+                    <li>cheddar
+                    <li>red &amp; green peppers
+                    <li>black olives
+                    <li>pepperoni
+                    <li>red onions
+                    <li>beef
+                    <li>italian sausage
+                </ul>
+            </div>
+            
+            <div class="pie">
+                <h1>Margherita</h1>
+                <ul>
+                    <li>Olive Oil
+                    <li>Minced Garlic
+                    <li>Basil
+                    <li>Roma Tomatoes
+                </ul>
+            </div>
+            
+            <div class="pie">
+                <h1>Maui Wowwi</h1>
+                <ul>
+                    <li>BBQ Sauce
+                    <li>Red Onions
+                    <li>Bacon
+                    <li>Pineapple
+                    <li>Canadian Bacon
+                    <li>cilantro
+                </ul>
+            </div>
+
+            <div class="pie">
+                <h1>Pesto Chicken Alfredo</h1>
+                <ul>
+                    <li>Alfredo Sauce
+                    <li>Caramelized Onions
+                    <li>Tomatoes
+                    <li>Grilled Chicken
+                    <li>Basil Drizzle
+                </ul>
+            </div>
+
+            <div class="pie">
+                <h1>Farmer's Market</h1>
+                <ul>
+                    <li>Tuscan Marinara
+                    <li>Red &amp; Green Peppers
+                    <li>Mushrooms
+                    <li>Red Onions
+                    <li>Spinach
+                    <li>Tomatoes
+                </ul>
+            </div>
+
+            <div class="pie">
+                <h1>BBQ Chicken</h1>
+                <ul>
+                    <li>BBQ Sauce
+                    <li>Red Onions
+                    <li>Cheddar
+                    <li>Grilled Chicken
+                    <li>Chopped Cilantro
+                </ul>
+            </div>
+
+            <div class="pie">
+                <h1>Athenian</h1>
+                <ul>
+                    <li>Olive Oil
+                    <li>Red Onions
+                    <li>Feta
+                    <li>Basil
+                    <li>Grilled Chicken
+                    <li>Kalamata Olives
+                    <li>Minced Garlic
+                    <li>Banana Peppers
+                    <li>Sun-Dried Tomato Purée
+                </ul>
+            </div>
+
+            <div class="pie">
+                <h1>Buffalo Chicken</h1>
+                <ul>
+                    <li>Buffalo Ranch Sauce
+                    <li>Banana Peppers
+                    <li>Cheddar
+                    <li>Grilled Chicken
+                </ul>
+            </div>
+            
+            <div class="pie">
+                <h1>Chicken Carbonara</h1>
+                <ul>
+                    <li>Alfredo Sauce
+                    <li>Mushrooms
+                    <li>Parmesan
+                    <li>Crushed Red Pepper
+                    <li>Grilled Chicken
+                    <li>Bacon
+                </ul>
+            </div>
+            
+            <div class="pie">
+                <h1>High Five</h1>
+                <ul>
+                    <li>Tuscan Marinara
+                    <li>Bacon
+                    <li>Cheddar
+                    <li>Beef
+                    <li>Pepperoni
+                    <li>Canadian Bacon
+                    <li>Italian Sausage
+                </ul>
+            </div>
+        </div>
+
+        <div class="pie-container">
+            <div class="pie">
+                <h1>kid's</h1>
+                <span class="price">$4.49</span>
+            </div>
+            
+            <div class="pie">
+                <h1>cheese</h1>
+                <span class="price">$6.49</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="not-pie">
+        <h1>not pie</h1>
+        
+    </div>
+    
+    <div class="pick-your-bundle">
+        <h1>pick your bundle</h1>
+    </div>
+</body>
+</html>
