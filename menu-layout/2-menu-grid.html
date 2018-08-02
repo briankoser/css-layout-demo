@@ -1,0 +1,441 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid - Menu Layout - CSS Layout</title>
+    <style>
+        /* todo:
+            font color
+            font size
+            arrow icons
+            hr
+            grid
+        */
+
+        /* General styles */
+        /* CSS Variable (support: not IE) */
+        :root {
+            --color-black: hsl(0, 0%, 8%);
+            --color-red: hsl(357, 88%, 56%);
+            --color-white: hsl(0, 0%, 100%);
+        }
+
+        html {
+            box-sizing: border-box;
+        }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        
+        body {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            text-transform: lowercase;
+        }
+
+        li {
+            list-style: none;
+        }
+
+
+
+        /* Structural Classes */
+        .dish:not(.dish-price-only) h2 {
+            text-transform: initial;
+        }
+
+        .recommended-dressing {
+            text-transform: uppercase;
+        }
+
+
+
+        /* Styling Classes */
+        .slash-list li {
+            display: inline;
+        }
+
+        .slash-list li:not(:last-child):after {
+            content: "/ ";
+        }
+
+        
+
+
+
+        /* Page styles
+        body {
+            display: grid;
+            grid-template-areas:
+                "header"
+                "content"
+                "sidebar"
+                "footer";
+        }
+
+        .header {
+            grid-area: header;
+        }
+
+        .content {
+            grid-area: content;
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+        }
+
+        .footer {
+            grid-area: footer;
+        }
+
+        @media all and (min-width: 500px) {
+            body {
+                grid-template-columns: 2fr 1fr;
+                grid-template-rows: 100px 1fr 100px;
+                grid-template-areas:
+                    "header header"
+                    "content sidebar"
+                    "footer footer";
+            }
+        }*/
+    </style>
+</head>
+<body>
+    <div class="build-your-pie">
+        <h1>Build Your Pie</h1>
+        <span class="price">$7.49</span>
+        <div class="choose-container">
+            <div class="choose">
+                <h2>Choose Your Crust</h2>
+                <ul>
+                    <li>Crispy Thin
+                    <li>Traditional Italian
+                    <li>Classic Pan
+                    <li>Gluten-free +$2
+                </ul>
+            </div>
+
+            <div class="choose">
+                <h2>Choose Your Sauce</h2>
+                <ul>
+                    <li>Tuscan Marinara
+                    <li>Spicy Marinara
+                    <li>Buffalo Ranch
+                    <li>Alfredo
+                    <li>Olive Oil
+                    <li>BBQ
+                </ul>
+            </div>
+
+            <div class="choose">
+                <h2>Choose Your Cheese</h2>
+                <ul>
+                    <li>100% Whole Milk Mozzarella
+                    <li>Shredded Cheddar
+                    <li>Ricotta
+                    <li>Shredded Parmesan
+                    <li>Vegan Cheese +$2
+                </ul>
+            </div>
+
+            <div class="choose">
+                <h2>Choose Your Toppings</h2>
+            </div>
+            
+            <div class="choose">
+                <h2>What are you waiting for?</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="try-our-pie">
+        <h1>Try Our Pie</h1>
+        <span class="cost">$7.99</span>
+        
+        <div class="dish-container">
+            <div class="dish">
+                <h2>Five Star</h2>
+                <ul class="slash-list">
+                    <li>Tuscan Marinara
+                    <li>Green Olives
+                    <li>Cheddar
+                    <li>Red &amp; Green Peppers
+                    <li>Black Olives
+                    <li>Pepperoni
+                    <li>Red Onions
+                    <li>Beef
+                    <li>Italian Sausage
+                </ul>
+            </div>
+            
+            <div class="dish">
+                <h2>Margherita</h2>
+                <ul class="slash-list">
+                    <li>Olive Oil
+                    <li>Minced Garlic
+                    <li>Basil
+                    <li>Roma Tomatoes
+                </ul>
+            </div>
+            
+            <div class="dish">
+                <h2>Maui Wowwi</h2>
+                <ul class="slash-list">
+                    <li>BBQ Sauce
+                    <li>Red Onions
+                    <li>Bacon
+                    <li>Pineapple
+                    <li>Canadian Bacon
+                    <li>Cilantro
+                </ul>
+            </div>
+
+            <div class="dish">
+                <h2>Pesto Chicken Alfredo</h2>
+                <ul class="slash-list">
+                    <li>Alfredo Sauce
+                    <li>Caramelized Onions
+                    <li>Tomatoes
+                    <li>Grilled Chicken
+                    <li>Basil Drizzle
+                </ul>
+            </div>
+
+            <div class="dish">
+                <h2>Farmer's Market</h2>
+                <ul class="slash-list">
+                    <li>Tuscan Marinara
+                    <li>Red &amp; Green Peppers
+                    <li>Mushrooms
+                    <li>Red Onions
+                    <li>Spinach
+                    <li>Tomatoes
+                </ul>
+            </div>
+
+            <div class="dish">
+                <h2>BBQ Chicken</h2>
+                <ul class="slash-list">
+                    <li>BBQ Sauce
+                    <li>Red Onions
+                    <li>Cheddar
+                    <li>Grilled Chicken
+                    <li>Chopped Cilantro
+                </ul>
+            </div>
+
+            <div class="dish">
+                <h2>Athenian</h2>
+                <ul class="slash-list">
+                    <li>Olive Oil
+                    <li>Red Onions
+                    <li>Feta
+                    <li>Basil
+                    <li>Grilled Chicken
+                    <li>Kalamata Olives
+                    <li>Minced Garlic
+                    <li>Banana Peppers
+                    <li>Sun-Dried Tomato Purée
+                </ul>
+            </div>
+
+            <div class="dish">
+                <h2>Buffalo Chicken</h2>
+                <ul class="slash-list">
+                    <li>Buffalo Ranch Sauce
+                    <li>Banana Peppers
+                    <li>Cheddar
+                    <li>Grilled Chicken
+                </ul>
+            </div>
+            
+            <div class="dish">
+                <h2>Chicken Carbonara</h2>
+                <ul class="slash-list">
+                    <li>Alfredo Sauce
+                    <li>Mushrooms
+                    <li>Parmesan
+                    <li>Crushed Red Pepper
+                    <li>Grilled Chicken
+                    <li>Bacon
+                </ul>
+            </div>
+            
+            <div class="dish">
+                <h2>High Five</h2>
+                <ul class="slash-list">
+                    <li>Tuscan Marinara
+                    <li>Bacon
+                    <li>Cheddar
+                    <li>Beef
+                    <li>Pepperoni
+                    <li>Canadian Bacon
+                    <li>Italian Sausage
+                </ul>
+            </div>
+        </div>
+
+        <div class="dish-container">
+            <div class="dish dish-price-only">
+                <h2>Kid's</h2>
+                <span class="price">$4.49</span>
+            </div>
+            
+            <div class="dish dish-price-only">
+                <h2>Cheese</h2>
+                <span class="price">$6.49</span>
+            </div>
+        </div>
+
+        <aside>Pizzas made with 100% whole milk mozzarella</aside>
+    </div>
+
+    <div class="not-pie">
+        <h1>Not Pie</h1>
+        <h2>Salads</h2>
+        <span class="price">$7.99</span>
+        
+        <div class="dish-container">
+            <div class="dish">
+                <h3>Chicken Caesar</h3>
+                <ul>
+                    <li>Romaine Lettuce
+                    <li>Parmesan Cheese
+                    <li>Grilled Chicken
+                </ul>
+                <span class="recommended-dressing">Recommended Dressing: Caesar</span>
+            </div>
+
+            <div class="dish">
+                <h3>Greek</h3>
+                <ul class="slash-list">
+                    <li>Romaine Lettuce
+                    <li>Tomatoes
+                    <li>Feta
+                    <li>Grilled Chicken
+                    <li>Red Onions
+                    <li>Carrots
+                    <li>Kalamata Olives
+                    <li>Banana Peppers
+                </ul>
+                <span class="recommended-dressing">Recommended Dressing: Greek</span>
+            </div>
+            
+            <div class="dish">
+                <h3>Classic Italian</h3>
+                <ul class="slash-list">
+                    <li>Romaine Lettuce
+                    <li>Mozzarella
+                    <li>Grilled Chicken
+                    <li>Tomatoes
+                    <li>Red Onions
+                    <li>Balsamic Drizzle
+                    <li>Pepperoni
+                </ul>
+                <span class="recommended-dressing">Recommended Dressing: House Vinaigrette</span>
+            </div>
+            
+            <div class="dish">
+                <h3>Spinach</h3>
+                <ul class="slash-list">
+                    <li>Spinach
+                    <li>Bacon
+                    <li>Tomatoes
+                    <li>Mushrooms
+                </ul>
+                <span class="recommended-dressing">Recommended Dressing: House Vinaigrette</span>
+            </div>
+        </div>
+
+        <div class="dish-container">
+            <div class="dish dish-price-only">
+                <h3>Side Salads</h3>
+                <span class="price">$2.99</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <h2>Stix</h2>
+        <ul>
+            <li>Garlic Butter Breadstix <span class="price">$3.99</span>
+            <li>Cheesy Breadstix <span class="price">$4.99</span>
+            <li>Bacon Cheesy Breadstix <span class="price">$5.49</span>
+        </ul>
+
+        <aside>Don't forget your dipping sauce! 3 to choose from</aside>
+
+        <h2>
+            Sweets
+            <br>
+            Made Fresh Daily
+        </h2>
+        <ol class="slash-list">
+            <li>Slice $1.99
+            <li>Whole $9.99
+        </ol>
+        <ul>
+            <li>Chocolate Chip
+            <li>Turtle Brownie
+            <li>Ultimate Brownie
+        </ul>
+
+        <h2>Sips</h2>
+        <img src="coca-cola-logo.png">
+    </div>
+    
+    <div class="pick-your-bundle">
+        <h1>Pick Your Bundle</h1>
+
+        <div class="bundle-container">
+            <h2>Dessert Bundle</h2>
+            <div class="bundle">
+                <span class="name">Pizza + Dessert + Drink</span>
+                <span class="price">$11.49</span>
+            </div>
+
+            <h2>Salad Bundle</h2>
+            <div class="bundle">
+                <span class="name">Pizza + Side Salad + Drink</span>
+                <span class="price">$11.99</span>
+            </div>
+
+            <h2>Breadstix Bundle</h2>
+            <div class="bundle">
+                <span class="name">Pizza + Breadstix* + Drink</span>
+                <span class="price">$12.49</span>
+                <small>
+                    *
+                    <ol class="slash-list">
+                        <li>+$1 Cheesy Breadstix 
+                        <li>+$1.50 Bacon Cheesy Breadstix
+                    </ol>
+            </div>
+        </div>
+
+        <div class="pizza-image">
+            <img src="pizza.png">
+            <small>Warning: Breadstix may be addictive</small>
+        </div>
+
+        <div class="bundle-container">
+            <h2>Kid's Bundle</h2>
+            <div class="bundle">
+                <span class="name">Kid's Pizza + Dessert + Kid's Drink</span>
+                <span class="price">$6.49</span>
+                <small>
+                    <ol>
+                        <li>+$1 for Kid's Milk
+                    </ol>
+                </small>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
