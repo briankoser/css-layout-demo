@@ -7,7 +7,6 @@
     <title>Grid - Menu Layout - CSS Layout</title>
     <style>
         /* todo:
-            arrow icons
             hr
             grid
         */
@@ -57,6 +56,13 @@
 
         li {
             list-style: none;
+        }
+
+        .build-your-pie h2:before,
+        .not-pie .stix li:before,
+        .not-pie .sweets li:before {
+            color: var(--color-red);
+            content: "▶ ";
         }
 
 
