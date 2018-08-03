@@ -69,6 +69,11 @@
             padding: 1rem;
         }
 
+        .menu-block header {
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
         .build-your-pie .price,
         .try-our-pie h1 + .price,
         .not-pie h2,
@@ -83,7 +88,7 @@
             font-size: 1.5rem;
         }
 
-        .try-our-pie aside,
+        .try-our-pie footer,
         .pick-your-bundle small {
             font-size: 1rem;
         }
@@ -163,11 +168,6 @@
 
 
         /* Build Your Pie (Not) Grid */
-        .build-your-pie header {
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-
         .build-your-pie ul {
             padding-left: 1.2em;
         }
@@ -186,57 +186,44 @@
 
 
 
-
-        /*.build-your-pie {
+        /* Try Our Pie Grid */
+        .try-our-pie {
             display: grid;
-            grid-template-rows: 3fr 1fr 2fr 1fr 3fr 1fr 3fr 1fr 1fr;
+            grid-template-rows: 2fr 12fr 2fr 1fr;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 0.5rem;
             grid-template-areas:
-                "header"
-                "crustheader"
-                "crustlist"
-                "sauceheader"
-                "saucelist"
-                "cheeseheader"
-                "cheeselist"
-                "toppings"
-                "waiting";
+                "header        header"
+                "piesleft      piesright"
+                "extrapiesleft extrapiesright"
+                "footer        footer";
         }
 
-        .build-your-pie header {
+        .try-our-pie header {
             grid-area: header;
         }
         
-        {
-            grid-area: crustheader;
+        .try-our-pie .dish-container:first {
+            grid-area: piesleft;
         }
         
-        {
-            grid-area: crustlist;
+        .try-our-pie .dish-container:last {
+            grid-area: piesright;
+        }
+
+        .try-our-pie .dish-price-only:first {
+            grid-area: extrapiesleft;
+        }
+
+        .try-our-pie .dish-price-only:last {
+            grid-area: extrapiesright;
         }
         
-        {
-            grid-area: sauceheader;
+        .try-our-pie footer {
+            grid-area: footer;
+            text-align: center;
         }
-        
-        {
-            grid-area: saucelist;
-        }
-        
-        {
-            grid-area: cheeseheader;
-        }
-        
-        {
-            grid-area: cheeselist;
-        }
-        
-        {
-            grid-area: toppings;
-        }
-        
-        {
-            grid-area: waiting;
-        }*/
+
 
 
         /* Desktop Grid Styles */
@@ -244,11 +231,11 @@
             body {
                 grid-template-rows: 2fr 1fr;
                 grid-template-columns: 3fr 4fr 2fr;
+                grid-gap: 1rem 1rem;
                 grid-template-areas:
                     "build  try    not"
                     "build  try    not"
                     "bundle bundle not";
-                grid-gap: 20px 20px;
             }
         }
     </style>
@@ -302,9 +289,11 @@
     </div>
 
     <div class="menu-block try-our-pie">
-        <h1>Try Our Pie</h1>
-        <span class="price">$7.99</span>
-        
+        <header>
+            <h1>Try Our Pie</h1>
+            <span class="price">$7.99</span>
+        </header>
+
         <div class="dish-container">
             <div class="dish">
                 <h2>Five Star</h2>
@@ -365,7 +354,9 @@
                     <li>Tomatoes
                 </ul>
             </div>
+        </div>
 
+        <div class="dish-container">
             <div class="dish">
                 <h2>BBQ Chicken</h2>
                 <ul class="slash-list">
@@ -428,19 +419,17 @@
             </div>
         </div>
 
-        <div class="dish-container">
-            <div class="dish dish-price-only">
-                <h2>Kid's</h2>
-                <span class="price">$4.49</span>
-            </div>
-            
-            <div class="dish dish-price-only">
-                <h2>Cheese</h2>
-                <span class="price">$6.49</span>
-            </div>
+        <div class="dish dish-price-only">
+            <h2>Kid's</h2>
+            <span class="price">$4.49</span>
+        </div>
+        
+        <div class="dish dish-price-only">
+            <h2>Cheese</h2>
+            <span class="price">$6.49</span>
         </div>
 
-        <aside>Pizzas made with 100% whole milk mozzarella</aside>
+        <footer>Pizzas made with 100% whole milk mozzarella</footer>
     </div>
 
     <div class="menu-block not-pie">
