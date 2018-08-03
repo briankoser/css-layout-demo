@@ -8,13 +8,13 @@
     <style>
         /* todo:
             hr
-            grid
         */
 
         /* General styles */
         /* CSS Variable (support: not IE) */
         :root {
             --color-black: hsl(0, 0%, 8%);
+            --color-grey: hsl(0, 0%, 60%);
             --color-red: hsl(357, 88%, 56%);
             --color-white: hsl(0, 0%, 100%);
         }
@@ -28,7 +28,7 @@
         }
         
         body {
-            background-color: var(--color-black);
+            background-color: var(--color-grey);
             color: var(--color-white);
             font-family: Helvetica, Arial, sans-serif;
             font-size: 18px;
@@ -62,6 +62,11 @@
         
 
         /* Structural Classes */
+        .menu-block {
+            background-color: var(--color-black);
+            padding: 1rem;
+        }
+
         .build-your-pie .price,
         .try-our-pie h1 + .price,
         .not-pie h2,
@@ -127,7 +132,7 @@
 
         
 
-        /* Mobile Grid Styles */
+        /* Base Grid Styles (Mobile) */
         body {
             display: grid;
             grid-template-areas:
@@ -156,20 +161,21 @@
 
 
         /* Desktop Grid Styles */
-        /*@media all and (min-width: 500px) {
+        @media all and (min-width: 500px) {
             body {
-                grid-template-columns: 3fr 4fr 2fr;
                 grid-template-rows: 2fr 1fr;
+                grid-template-columns: 3fr 4fr 2fr;
                 grid-template-areas:
                     "build  try    not"
                     "build  try    not"
                     "bundle bundle not";
+                grid-gap: 20px 20px;
             }
-        }*/
+        }
     </style>
 </head>
 <body>
-    <div class="build-your-pie">
+    <div class="menu-block build-your-pie">
         <h1>Build Your Pie</h1>
         <span class="price">$7.49</span>
         <div class="choose-container">
@@ -216,7 +222,7 @@
         </div>
     </div>
 
-    <div class="try-our-pie">
+    <div class="menu-block try-our-pie">
         <h1>Try Our Pie</h1>
         <span class="price">$7.99</span>
         
@@ -358,7 +364,7 @@
         <aside>Pizzas made with 100% whole milk mozzarella</aside>
     </div>
 
-    <div class="not-pie">
+    <div class="menu-block not-pie">
         <h1>Not Pie</h1>
         <h2>Salads</h2>
         <span class="price">$7.99</span>
@@ -449,7 +455,7 @@
         <img class="img-coke" src="coca-cola-logo.png">
     </div>
     
-    <div class="pick-your-bundle">
+    <div class="menu-block pick-your-bundle">
         <h1>Pick Your Bundle</h1>
 
         <div class="bundle-container">
