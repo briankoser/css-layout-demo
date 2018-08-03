@@ -129,6 +129,10 @@
 
 
         /* Styling Classes */
+        .price-header {
+            display: inline;
+        }
+        
         .slash-list li {
             display: inline;
         }
@@ -170,10 +174,6 @@
         /* Build Your Pie (Not) Grid */
         .build-your-pie ul {
             padding-left: 1.2em;
-        }
-
-        .build-your-pie .no-column-list {
-            margin-bottom: 0;
         }
 
         .build-your-pie .choose ul:not(.no-column-list) {
@@ -226,6 +226,59 @@
 
 
 
+        /* Pick Your Bundle Grid */
+        .pick-your-bundle {
+            display: grid;
+            grid-template-rows: 1fr 3fr 1fr;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-column-gap: 0.5rem;
+            grid-template-areas:
+                "header       header      header"
+                "bundleleft   image       bundleright"
+                "bundlefooter imagefooter imagefooter";
+        }
+
+        .pick-your-bundle header {
+            grid-area: header;
+        }
+
+        .pick-your-bundle .bundle-container:first {
+            grid-area: bundleleft;
+        }
+
+        .pick-your-bundle .pizza-image-container {
+            grid-area: image;
+            justify-self: center;
+        }
+
+        .pick-your-bundle .bundle-container:last {
+            grid-area: bundleright;
+        }
+
+        .pick-your-bundle .breadstix-fineprint {
+            grid-area: bundlefooter;
+        }
+
+        .pick-your-bundle .pizza-fineprint {
+            grid-area: imagefooter;
+        }
+
+        .pick-your-bundle h2 {
+            text-align: center;
+        }
+
+        .pick-your-bundle .price {
+            text-align: right;
+        }
+
+        .pick-your-bundle .breadstix-fineprint:before {
+            content: "*";
+        }
+
+
+
+
+
         /* Desktop Grid Styles */
         @media all and (min-width: 500px) {
             body {
@@ -273,8 +326,6 @@
                 <h2>Choose Your Cheese</h2>
                 <ul class="no-column-list">
                     <li>100% Whole Milk Mozzarella
-                </ul>
-                <ul>
                     <li>Shredded Cheddar
                     <li>Ricotta
                     <li>Shredded Parmesan
@@ -433,8 +484,11 @@
     </div>
 
     <div class="menu-block not-pie">
-        <h1>Not Pie</h1>
-        <h2>Salads</h2>
+        <header>
+            <h1>Not Pie</h1>
+        </header>
+
+        <h2 class="price-header">Salads</h2>
         <span class="price">$7.99</span>
         
         <div class="dish-container">
@@ -491,7 +545,7 @@
 
         <div class="dish-container">
             <div class="dish dish-price-only">
-                <h3>Side Salads</h3>
+                <h3 class="price-header">Side Salads</h3>
                 <span class="price">$2.99</span>
             </div>
         </div>
@@ -524,7 +578,9 @@
     </div>
     
     <div class="menu-block pick-your-bundle">
-        <h1>Pick Your Bundle</h1>
+        <header>
+            <h1>Pick Your Bundle</h1>
+        </header>
 
         <div class="bundle-container">
             <h2>Dessert Bundle</h2>
@@ -543,20 +599,21 @@
             <div class="bundle">
                 <span class="name">Pizza + Breadstix* + Drink</span>
                 <span class="price">$12.49</span>
-                <small>
-                    *
-                    <ol class="slash-list">
-                        <li>+$1 Cheesy Breadstix 
-                        <li>+$1.50 Bacon Cheesy Breadstix
-                    </ol>
-                </small>
             </div>
         </div>
 
-        <div class="pizza-image">
+        <small class="breadstix-fineprint">
+            <ol class="slash-list">
+                <li>+$1 Cheesy Breadstix 
+                <li>+$1.50 Bacon Cheesy Breadstix
+            </ol>
+        </small>
+
+        <div class="pizza-image-container">
             <img class="img-pizza" src="pizza.png">
-            <small>Warning: Breadstix may be addictive</small>
         </div>
+
+        <small class="pizza-fineprint">Warning: Breadstix may be addictive</small>
 
         <div class="bundle-container">
             <h2>Kid's Bundle</h2>
