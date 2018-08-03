@@ -7,7 +7,6 @@
     <title>Grid - Menu Layout - CSS Layout</title>
     <style>
         /* todo:
-            font color
             font size
             arrow icons
             hr
@@ -38,6 +37,12 @@
             text-transform: lowercase;
         }
 
+        h1,
+        h2,
+        h3 {
+            color: var(--color-red);
+        }
+
         li {
             list-style: none;
         }
@@ -47,6 +52,14 @@
         /* Structural Classes */
         .dish:not(.dish-price-only) h2 {
             text-transform: initial;
+        }
+
+        .not-pie aside {
+            color: var(--color-red);
+        }
+
+        .pick-your-bundle h1 {
+            color: var(--color-white);
         }
 
         .recommended-dressing {
