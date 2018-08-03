@@ -183,7 +183,7 @@
         .try-our-pie {
             display: grid;
             grid-template-rows: 2fr 12fr 2fr 1fr;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             grid-column-gap: 0.5rem;
             grid-template-areas:
                 "header         header"
@@ -298,23 +298,20 @@
         /* Desktop Grid Styles */
         @media all and (min-width: 500px) {
             body {
-                grid-template-rows: 2fr 1fr;
-                grid-template-columns: 3fr 4fr 3fr;
+                grid-template:
+                    "build  try    not" 3fr 
+                    "bundle bundle not" 1fr
+                    / 3fr 4fr 3fr;
                 grid-gap: 1rem 1rem;
-                grid-template-areas:
-                    "build  try    not"
-                    "build  try    not"
-                    "bundle bundle not";
             }
 
             .pick-your-bundle {
-                grid-template-rows: 2fr 7fr 1fr;
-                grid-template-columns: 3fr 2fr 2fr;
+                grid-template:
+                    "header       header      header"      2fr
+                    "bundlefirst  image       bundleright" 7fr
+                    "bundlefooter imagefooter imagefooter" 1fr
+                    / 3fr 2fr 2fr;
                 grid-column-gap: 0.5rem;
-                grid-template-areas:
-                    "header       header      header"
-                    "bundlefirst   image       bundleright"
-                    "bundlefooter imagefooter imagefooter";
             }
         }
     </style>
