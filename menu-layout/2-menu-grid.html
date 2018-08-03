@@ -52,6 +52,11 @@
             font-size: 0.8rem;
         }
 
+        ol {
+            margin-left: 0;
+            padding-left: 0;
+        }
+
         ul {
             margin: 0 0 1em 0;
             padding: 0;
@@ -98,20 +103,8 @@
             font-size: 0.8rem;
         }
 
-        .not-pie aside {
-            color: var(--color-red);
-        }
-
-        .pick-your-bundle h1 {
-            color: var(--color-white);
-        }
-
         .dish:not(.dish-price-only) h2 {
             text-transform: initial;
-        }
-
-        .recommended-dressing {
-            text-transform: uppercase;
         }
 
         .build-your-pie h2:before,
@@ -125,7 +118,7 @@
         .img-pizza {
             max-width: 200px;
         }
-
+        
 
 
         /* Styling Classes */
@@ -193,10 +186,10 @@
             grid-template-columns: 1fr 1fr;
             grid-column-gap: 0.5rem;
             grid-template-areas:
-                "header        header"
-                "piesleft      piesright"
-                "extrapiesleft extrapiesright"
-                "footer        footer";
+                "header         header"
+                "piesfirst      piessecond"
+                "extrapiesfirst extrapiessecond"
+                "footer         footer";
         }
 
         .try-our-pie header {
@@ -204,19 +197,19 @@
         }
         
         .try-our-pie .dish-container:first {
-            grid-area: piesleft;
+            grid-area: piesfirst;
         }
         
         .try-our-pie .dish-container:last {
-            grid-area: piesright;
+            grid-area: piessecond;
         }
 
         .try-our-pie .dish-price-only:first {
-            grid-area: extrapiesleft;
+            grid-area: extrapiesfirst;
         }
 
         .try-our-pie .dish-price-only:last {
-            grid-area: extrapiesright;
+            grid-area: extrapiessecond;
         }
         
         .try-our-pie footer {
@@ -229,13 +222,14 @@
         /* Pick Your Bundle Grid */
         .pick-your-bundle {
             display: grid;
-            grid-template-rows: 1fr 3fr 1fr;
-            grid-template-columns: 2fr 1fr 1fr;
-            grid-column-gap: 0.5rem;
+            grid-template-rows: 1fr 3fr 1fr 3fr 1fr 2fr;
             grid-template-areas:
-                "header       header      header"
-                "bundleleft   image       bundleright"
-                "bundlefooter imagefooter imagefooter";
+                "header"
+                "bundlefirst"
+                "bundlefooter"
+                "image"
+                "imagefooter"
+                "bundlesecond";
         }
 
         .pick-your-bundle header {
@@ -243,7 +237,7 @@
         }
 
         .pick-your-bundle .bundle-container:first {
-            grid-area: bundleleft;
+            grid-area: bundlefirst;
         }
 
         .pick-your-bundle .pizza-image-container {
@@ -263,27 +257,40 @@
             grid-area: imagefooter;
         }
 
+        .pick-your-bundle h1 {
+            color: var(--color-white);
+        }
+
         .pick-your-bundle h2 {
             text-align: center;
+        }
+        
+        .pick-your-bundle ol {
+            margin: 0;
         }
 
         .pick-your-bundle .price {
             text-align: right;
         }
 
-        .pick-your-bundle .breadstix-fineprint:before {
-            content: "*";
-        }
-
 
 
         /* Not Pie */
+        .not-pie aside {
+            color: var(--color-red);
+            margin-bottom: 0.5em;
+        }
+
         .not-pie .dish ul {
             margin-bottom: 0;
         }
 
         .not-pie .recommended-dressing {
             margin: 0.3rem 0 1rem 0;
+        }
+        
+        .not-pie .recommended-dressing {
+            text-transform: uppercase;
         }
 
 
@@ -292,12 +299,22 @@
         @media all and (min-width: 500px) {
             body {
                 grid-template-rows: 2fr 1fr;
-                grid-template-columns: 3fr 4fr 2fr;
+                grid-template-columns: 3fr 4fr 3fr;
                 grid-gap: 1rem 1rem;
                 grid-template-areas:
                     "build  try    not"
                     "build  try    not"
                     "bundle bundle not";
+            }
+
+            .pick-your-bundle {
+                grid-template-rows: 2fr 7fr 1fr;
+                grid-template-columns: 3fr 2fr 2fr;
+                grid-column-gap: 0.5rem;
+                grid-template-areas:
+                    "header       header      header"
+                    "bundlefirst   image       bundleright"
+                    "bundlefooter imagefooter imagefooter";
             }
         }
     </style>
@@ -568,7 +585,7 @@
             <li>Bacon Cheesy Breadstix <span class="price">$5.49</span>
         </ul>
 
-        <aside>Don't forget your dipping sauce! 3 to choose from</aside>
+        <aside>Don't forget your dipping sauce!<br>3 to choose from</aside>
 
         <h2>Sweets</h2>
         <h3 class="made-fresh-daily">Made Fresh Daily</h3>
