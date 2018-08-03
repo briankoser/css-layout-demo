@@ -7,9 +7,11 @@
     <title>Grid, No CSS - Menu Layout - CSS Layout</title>
 </head>
 <body>
-    <div class="build-your-pie">
-        <h1>Build Your Pie</h1>
-        <span class="price">$7.49</span>
+    <div class="menu-block build-your-pie">
+        <header>
+            <h1>Build Your Pie</h1>
+            <span class="price">$7.99</span>
+        </header>
         <div class="choose-container">
             <div class="choose">
                 <h2>Choose Your Crust</h2>
@@ -35,7 +37,7 @@
 
             <div class="choose">
                 <h2>Choose Your Cheese</h2>
-                <ul>
+                <ul class="no-column-list">
                     <li>100% Whole Milk Mozzarella
                     <li>Shredded Cheddar
                     <li>Ricotta
@@ -44,24 +46,22 @@
                 </ul>
             </div>
 
-            <div class="choose">
-                <h2>Choose Your Toppings</h2>
-            </div>
-            
-            <div class="choose">
-                <h2>What are you waiting for?</h2>
-            </div>
+            <h2>Choose Your Toppings</h2>
+
+            <h2>What are you waiting for?</h2>
         </div>
     </div>
 
-    <div class="try-our-pie">
-        <h1>Try Our Pie</h1>
-        <span class="cost">$7.99</span>
-        
+    <div class="menu-block try-our-pie">
+        <header>
+            <h1>Try Our Pie</h1>
+            <span class="price">$7.99</span>
+        </header>
+
         <div class="dish-container">
             <div class="dish">
                 <h2>Five Star</h2>
-                <ul>
+                <ul class="slash-list">
                     <li>Tuscan Marinara
                     <li>Green Olives
                     <li>Cheddar
@@ -76,7 +76,7 @@
             
             <div class="dish">
                 <h2>Margherita</h2>
-                <ul>
+                <ul class="slash-list">
                     <li>Olive Oil
                     <li>Minced Garlic
                     <li>Basil
@@ -86,7 +86,7 @@
             
             <div class="dish">
                 <h2>Maui Wowwi</h2>
-                <ul>
+                <ul class="slash-list">
                     <li>BBQ Sauce
                     <li>Red Onions
                     <li>Bacon
@@ -98,7 +98,7 @@
 
             <div class="dish">
                 <h2>Pesto Chicken Alfredo</h2>
-                <ul>
+                <ul class="slash-list">
                     <li>Alfredo Sauce
                     <li>Caramelized Onions
                     <li>Tomatoes
@@ -109,7 +109,7 @@
 
             <div class="dish">
                 <h2>Farmer's Market</h2>
-                <ul>
+                <ul class="slash-list">
                     <li>Tuscan Marinara
                     <li>Red &amp; Green Peppers
                     <li>Mushrooms
@@ -118,10 +118,12 @@
                     <li>Tomatoes
                 </ul>
             </div>
+        </div>
 
+        <div class="dish-container">
             <div class="dish">
                 <h2>BBQ Chicken</h2>
-                <ul>
+                <ul class="slash-list">
                     <li>BBQ Sauce
                     <li>Red Onions
                     <li>Cheddar
@@ -132,7 +134,7 @@
 
             <div class="dish">
                 <h2>Athenian</h2>
-                <ul>
+                <ul class="slash-list">
                     <li>Olive Oil
                     <li>Red Onions
                     <li>Feta
@@ -147,7 +149,7 @@
 
             <div class="dish">
                 <h2>Buffalo Chicken</h2>
-                <ul>
+                <ul class="slash-list">
                     <li>Buffalo Ranch Sauce
                     <li>Banana Peppers
                     <li>Cheddar
@@ -157,7 +159,7 @@
             
             <div class="dish">
                 <h2>Chicken Carbonara</h2>
-                <ul>
+                <ul class="slash-list">
                     <li>Alfredo Sauce
                     <li>Mushrooms
                     <li>Parmesan
@@ -169,7 +171,7 @@
             
             <div class="dish">
                 <h2>High Five</h2>
-                <ul>
+                <ul class="slash-list">
                     <li>Tuscan Marinara
                     <li>Bacon
                     <li>Cheddar
@@ -181,24 +183,25 @@
             </div>
         </div>
 
-        <div class="dish-container">
-            <div class="dish">
-                <h2>Kid's</h2>
-                <span class="price">$4.49</span>
-            </div>
-            
-            <div class="dish">
-                <h2>Cheese</h2>
-                <span class="price">$6.49</span>
-            </div>
+        <div class="dish dish-price-only">
+            <h2>Kid's</h2>
+            <span class="price">$4.49</span>
+        </div>
+        
+        <div class="dish dish-price-only">
+            <h2>Cheese</h2>
+            <span class="price">$6.49</span>
         </div>
 
-        <aside>Pizzas made with 100% whole milk mozzarella</aside>
+        <footer>Pizzas made with 100% whole milk mozzarella</footer>
     </div>
 
-    <div class="not-pie">
-        <h1>Not Pie</h1>
-        <h2>Salads</h2>
+    <div class="menu-block not-pie">
+        <header>
+            <h1>Not Pie</h1>
+        </header>
+
+        <h2 class="price-header">Salads</h2>
         <span class="price">$7.99</span>
         
         <div class="dish-container">
@@ -209,12 +212,12 @@
                     <li>Parmesan Cheese
                     <li>Grilled Chicken
                 </ul>
-                <span class="recommended-dressing">Recommended Dressing: Caesar</span>
+                <div class="recommended-dressing">Recommended Dressing: Caesar</div>
             </div>
 
             <div class="dish">
                 <h3>Greek</h3>
-                <ul>
+                <ul class="slash-list">
                     <li>Romaine Lettuce
                     <li>Tomatoes
                     <li>Feta
@@ -224,12 +227,12 @@
                     <li>Kalamata Olives
                     <li>Banana Peppers
                 </ul>
-                <span class="recommended-dressing">Recommended Dressing: Greek</span>
+                <div class="recommended-dressing">Recommended Dressing: Greek</div>
             </div>
             
             <div class="dish">
                 <h3>Classic Italian</h3>
-                <ul>
+                <ul class="slash-list">
                     <li>Romaine Lettuce
                     <li>Mozzarella
                     <li>Grilled Chicken
@@ -238,24 +241,24 @@
                     <li>Balsamic Drizzle
                     <li>Pepperoni
                 </ul>
-                <span class="recommended-dressing">Recommended Dressing: House Vinaigrette</span>
+                <div class="recommended-dressing">Recommended Dressing: House Vinaigrette</div>
             </div>
             
             <div class="dish">
                 <h3>Spinach</h3>
-                <ul>
+                <ul class="slash-list">
                     <li>Spinach
                     <li>Bacon
                     <li>Tomatoes
                     <li>Mushrooms
                 </ul>
-                <span class="recommended-dressing">Recommended Dressing: House Vinaigrette</span>
+                <div class="recommended-dressing">Recommended Dressing: House Vinaigrette</div>
             </div>
         </div>
 
         <div class="dish-container">
-            <div class="dish">
-                <h3>Side Salads</h3>
+            <div class="dish dish-price-only">
+                <h3 class="price-header">Side Salads</h3>
                 <span class="price">$2.99</span>
             </div>
         </div>
@@ -263,35 +266,34 @@
         <hr>
 
         <h2>Stix</h2>
-        <ul>
+        <ul class="stix">
             <li>Garlic Butter Breadstix <span class="price">$3.99</span>
             <li>Cheesy Breadstix <span class="price">$4.99</span>
             <li>Bacon Cheesy Breadstix <span class="price">$5.49</span>
         </ul>
 
-        <aside>Don't forget your dipping sauce! 3 to choose from</aside>
+        <aside>Don't forget your dipping sauce!<br>3 to choose from</aside>
 
-        <h2>
-            Sweets
-            <br>
-            Made Fresh Daily
-        </h2>
-        <ol class="price-list">
+        <h2>Sweets</h2>
+        <h3 class="made-fresh-daily">Made Fresh Daily</h3>
+        <ol class="slash-list">
             <li>Slice $1.99
             <li>Whole $9.99
         </ol>
-        <ul>
+        <ul class="sweets">
             <li>Chocolate Chip
             <li>Turtle Brownie
             <li>Ultimate Brownie
         </ul>
 
         <h2>Sips</h2>
-        <img src="coca-cola-logo.png">
+        <img class="img-coke" src="coca-cola-logo.png">
     </div>
     
-    <div class="pick-your-bundle">
-        <h1>Pick Your Bundle</h1>
+    <div class="menu-block pick-your-bundle">
+        <header>
+            <h1>Pick Your Bundle</h1>
+        </header>
 
         <div class="bundle-container">
             <h2>Dessert Bundle</h2>
@@ -310,19 +312,21 @@
             <div class="bundle">
                 <span class="name">Pizza + Breadstix* + Drink</span>
                 <span class="price">$12.49</span>
-                <small>
-                    *
-                    <ol>
-                        <li>+$1 Cheesy Breadstix 
-                        <li>+$1.50 Bacon Cheesy Breadstix
-                    </ol>
             </div>
         </div>
 
-        <div class="pizza-image">
-            <img src="pizza.png">
-            <small>Warning: Breadstix may be addictive</small>
+        <small class="breadstix-fineprint">
+            <ol class="slash-list">
+                <li>+$1 Cheesy Breadstix 
+                <li>+$1.50 Bacon Cheesy Breadstix
+            </ol>
+        </small>
+
+        <div class="pizza-image-container">
+            <img class="img-pizza" src="pizza.png">
         </div>
+
+        <small class="pizza-fineprint">Warning: Breadstix may be addictive</small>
 
         <div class="bundle-container">
             <h2>Kid's Bundle</h2>
