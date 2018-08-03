@@ -7,7 +7,6 @@
     <title>Grid - Menu Layout - CSS Layout</title>
     <style>
         /* todo:
-            font size
             arrow icons
             hr
             grid
@@ -33,6 +32,7 @@
             background-color: var(--color-black);
             color: var(--color-white);
             font-family: Helvetica, Arial, sans-serif;
+            font-size: 18px;
             margin: 0;
             text-transform: lowercase;
         }
@@ -43,6 +43,18 @@
             color: var(--color-red);
         }
 
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+        }
+
+        small {
+            font-size: 0.8rem;
+        }
+
         li {
             list-style: none;
         }
@@ -50,8 +62,28 @@
 
 
         /* Structural Classes */
-        .dish:not(.dish-price-only) h2 {
-            text-transform: initial;
+        .build-your-pie .price,
+        .try-our-pie h1 + .price,
+        .not-pie h2,
+        .not-pie h2 + .price {
+            font-size: 2rem;
+        }
+
+        .build-your-pie ul,
+        .not-pie ul.stix,
+        .not-pie ul.sweets,
+        .pick-your-bundle .bundle {
+            font-size: 1.5rem;
+        }
+
+        .try-our-pie aside,
+        .pick-your-bundle small {
+            font-size: 1rem;
+        }
+
+        .not-pie .made-fresh-daily,
+        .recommended-dressing {
+            font-size: 0.8rem;
         }
 
         .not-pie aside {
@@ -60,6 +92,10 @@
 
         .pick-your-bundle h1 {
             color: var(--color-white);
+        }
+
+        .dish:not(.dish-price-only) h2 {
+            text-transform: initial;
         }
 
         .recommended-dressing {
@@ -169,7 +205,7 @@
 
     <div class="try-our-pie">
         <h1>Try Our Pie</h1>
-        <span class="cost">$7.99</span>
+        <span class="price">$7.99</span>
         
         <div class="dish-container">
             <div class="dish">
@@ -376,7 +412,7 @@
         <hr>
 
         <h2>Stix</h2>
-        <ul>
+        <ul class="stix">
             <li>Garlic Butter Breadstix <span class="price">$3.99</span>
             <li>Cheesy Breadstix <span class="price">$4.99</span>
             <li>Bacon Cheesy Breadstix <span class="price">$5.49</span>
@@ -384,16 +420,13 @@
 
         <aside>Don't forget your dipping sauce! 3 to choose from</aside>
 
-        <h2>
-            Sweets
-            <br>
-            Made Fresh Daily
-        </h2>
+        <h2>Sweets</h2>
+        <h3 class="made-fresh-daily">Made Fresh Daily</h3>
         <ol class="slash-list">
             <li>Slice $1.99
             <li>Whole $9.99
         </ol>
-        <ul>
+        <ul class="sweets">
             <li>Chocolate Chip
             <li>Turtle Brownie
             <li>Ultimate Brownie
@@ -429,6 +462,7 @@
                         <li>+$1 Cheesy Breadstix 
                         <li>+$1.50 Bacon Cheesy Breadstix
                     </ol>
+                </small>
             </div>
         </div>
 
